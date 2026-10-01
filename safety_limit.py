@@ -1,0 +1,28 @@
+def observe():
+    return "test"
+
+
+def decide(observation):
+    return "success"
+
+
+def act(decision):
+    print("Action:", decision)
+
+
+def agent_loop():
+    max_iters = 10
+
+    for i in range(max_iters):
+        observation = observe()
+        decision = decide(observation)
+
+        if decision == "success":
+            return "success"
+
+        act(decision)
+
+    return "failure"
+
+
+print(agent_loop())
